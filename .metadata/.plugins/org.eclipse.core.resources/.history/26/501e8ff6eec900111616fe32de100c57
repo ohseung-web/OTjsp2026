@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2> 로그인 페이지 </h2>
+	<!-- form안의 action은 이 페이지에서 작성한 정보를 떠넘겨주는 파일명을 기술하는 공간 -->
+	<!-- 코드 한줄 복사 단축키 : Ctrl + Alt + ↓ -->
+	<!-- form안의 method은 전송방식을 의미한다. (Get,  Post) -->
+	<!-- form안의 method은 전송방식을 의미한다. (Get,  Post) -->
+	<form action="RequestloginProc.jsp" method="get">
+		
+	</form>
+</body>
+</html>

@@ -1,0 +1,33 @@
+
+10월 18, 2026 10:23:24.533 NEW SESSION
+10월 18, 2026 10:23:24.533 Created TensorFlow Lite XNNPACK delegate for CPU.
+10월 18, 2026 10:23:28.614 [12112:7512:1018/102328.614:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+10월 18, 2026 10:23:43.164 [12112:4160:1018/102343.164:ERROR:chrome\updater\ipc\update_service_dialer_win.cc:76] Failed to open named pipe server process 21668: �븸�꽭�뒪媛� 嫄곕��릺�뿀�뒿�땲�떎. (0x5)
+10월 18, 2026 10:23:45.263 [12112:15012:1018/102345.262:ERROR:chrome\updater\ipc\update_service_dialer_win.cc:76] Failed to open named pipe server process 19668: �븸�꽭�뒪媛� 嫄곕��릺�뿀�뒿�땲�떎. (0x5)
+10월 18, 2026 10:23:45.350 [12112:4160:1018/102345.349:ERROR:chrome\updater\ipc\update_service_dialer_win.cc:76] Failed to open named pipe server process 14692: �븸�꽭�뒪媛� 嫄곕��릺�뿀�뒿�땲�떎. (0x5)
+10월 18, 2026 10:23:47.454 [12112:15012:1018/102347.454:ERROR:chrome\updater\ipc\update_service_dialer_win.cc:76] Failed to open named pipe server process 3768: �븸�꽭�뒪媛� 嫄곕��릺�뿀�뒿�땲�떎. (0x5)
+10월 18, 2026 10:23:49.557 [12112:4160:1018/102349.556:ERROR:chrome\updater\ipc\update_service_dialer_win.cc:76] Failed to open named pipe server process 25104: �븸�꽭�뒪媛� 嫄곕��릺�뿀�뒿�땲�떎. (0x5)
+10월 18, 2026 10:23:49.641 [12112:15012:1018/102349.640:ERROR:chrome\updater\ipc\update_service_dialer_win.cc:76] Failed to open named pipe server process 22088: �븸�꽭�뒪媛� 嫄곕��릺�뿀�뒿�땲�떎. (0x5)
+10월 18, 2026 10:23:51.857 [12112:7512:1018/102351.856:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+10월 18, 2026 10:24:46.243 [12112:7512:1018/102446.243:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+10월 18, 2026 10:26:08.287 [12112:7512:1018/102608.286:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+10월 18, 2026 10:29:51.205 [12112:7512:1018/102951.205:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+10월 18, 2026 10:35:56.586 [12112:7512:1018/103556.585:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+10월 18, 2026 12:00:02.946 [12112:8220:1018/120002.945:ERROR:chrome\browser\ui\views\user_education\impl\browser_user_education_interface_impl.cc:186] Attempting to show IPH IPH_ExtensionsZeroStatePromo before browser initialization complete; IPH will not be shown.
+10월 18, 2026 13:43:08.852 [12112:8220:1018/134308.852:ERROR:mojo\public\cpp\bindings\lib\interface_endpoint_client.cc:652] Message 0 rejected by interface blink.mojom.WidgetHost
+10월 18, 2026 13:46:16.05 [12112:8220:1018/134616.004:ERROR:mojo\public\cpp\bindings\lib\interface_endpoint_client.cc:652] Message 6 rejected by interface blink.mojom.WidgetHost
+10월 18, 2026 13:46:16.05 [12112:8220:1018/134616.004:ERROR:mojo\public\cpp\bindings\lib\interface_endpoint_client.cc:652] Message 7 rejected by interface blink.mojom.WidgetHost
+10월 18, 2026 14:58:08.130 [12112:8220:1018/145808.129:ERROR:mojo\public\cpp\bindings\lib\interface_endpoint_client.cc:652] Message 0 rejected by interface blink.mojom.WidgetHost
+10월 18, 2026 15:24:50.372 [12112:4160:1018/152450.372:ERROR:chrome\updater\ipc\update_service_dialer_win.cc:76] Failed to open named pipe server process 24720: �븸�꽭�뒪媛� 嫄곕��릺�뿀�뒿�땲�떎. (0x5)
+10월 18, 2026 15:24:52.483 [12112:15012:1018/152452.483:ERROR:chrome\updater\ipc\update_service_dialer_win.cc:76] Failed to open named pipe server process 21864: �븸�꽭�뒪媛� 嫄곕��릺�뿀�뒿�땲�떎. (0x5)
+10월 18, 2026 15:24:54.578 [12112:4160:1018/152454.576:ERROR:chrome\updater\ipc\update_service_dialer_win.cc:76] Failed to open named pipe server process 3176: �븸�꽭�뒪媛� 嫄곕��릺�뿀�뒿�땲�떎. (0x5)
+10월 18, 2026 15:24:56.674 [12112:15012:1018/152456.673:ERROR:chrome\updater\ipc\update_service_dialer_win.cc:76] Failed to open named pipe server process 22492: �븸�꽭�뒪媛� 嫄곕��릺�뿀�뒿�땲�떎. (0x5)
+10월 18, 2026 15:24:58.774 [12112:4160:1018/152458.772:ERROR:chrome\updater\ipc\update_service_dialer_win.cc:76] Failed to open named pipe server process 18100: �븸�꽭�뒪媛� 嫄곕��릺�뿀�뒿�땲�떎. (0x5)
+10월 18, 2026 15:25:00.879 [12112:15012:1018/152500.879:ERROR:chrome\updater\ipc\update_service_dialer_win.cc:76] Failed to open named pipe server process 4268: �븸�꽭�뒪媛� 嫄곕��릺�뿀�뒿�땲�떎. (0x5)
+10월 18, 2026 17:00:23.785 [12112:8220:1018/170023.784:ERROR:chrome\browser\ui\views\user_education\impl\browser_user_education_interface_impl.cc:186] Attempting to show IPH IPH_ExtensionsZeroStatePromo before browser initialization complete; IPH will not be shown.
+10월 18, 2026 17:00:26.471 [12112:8220:1018/170026.471:ERROR:chrome\browser\ui\webui\ntp\new_tab_ui.cc:54] Requested load of chrome://newtab/ for incorrect profile type.
+10월 18, 2026 17:00:26.472 [12112:8220:1018/170026.471:ERROR:chrome\browser\ui\webui\ntp\new_tab_ui.cc:54] Requested load of chrome://newtab/ for incorrect profile type.
+10월 18, 2026 17:00:26.511 [12112:8220:1018/170026.511:ERROR:chrome\browser\ui\webui\ntp\new_tab_ui.cc:54] Requested load of chrome://newtab/ for incorrect profile type.
+10월 18, 2026 17:00:26.512 [12112:8220:1018/170026.512:ERROR:chrome\browser\ui\webui\ntp\new_tab_ui.cc:54] Requested load of chrome://newtab/ for incorrect profile type.
+10월 18, 2026 17:00:26.580 [12112:8220:1018/170026.579:ERROR:chrome\browser\ui\webui\ntp\new_tab_ui.cc:54] Requested load of chrome://newtab/ for incorrect profile type.
+10월 18, 2026 17:00:29.228 [12112:8220:1018/170029.227:ERROR:chrome\browser\ui\webui\ntp\new_tab_ui.cc:54] Requested load of chrome://newtab/ for incorrect profile type.

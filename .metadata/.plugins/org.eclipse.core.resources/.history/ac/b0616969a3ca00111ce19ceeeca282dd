@@ -1,0 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 
+	get방식은 사용자의 정보가 URL에 표시되어 넘어가지만
+	post방식은 사용자의 정보가 URL에 표시되지 않고 넘어가는데
+	post방식은 넘어갈때 영문은 안깨지지만 한글은 깨지는 현상이 있어서 아래코드 한줄을 삽입한다. -->
+
+	
+</body>
+</html>

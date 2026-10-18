@@ -1,0 +1,57 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2> 회원가입 </h2>
+	<form action="RequestJoinProc.jsp" method="post">
+		<table  width="500" border="1">
+			<tr hight="50">
+				<td width="150" align="center">아이디</td>
+				<td width="350">
+					<input type="text" name="id">
+				</td>	
+			</tr>
+			<tr hight="50">
+				<td width="150" align="center">패스워드</td>
+				<td width="350">
+					<input type="password" name="pass">
+				</td>	
+			</tr>
+			<tr hight="50">
+				<td width="150" align="center">패스워드 확인</td>
+				<td width="350">
+					<input type="password" name="passchk">
+				</td>	
+			</tr>
+			<tr hight="50">
+				<td width="150" align="center">이메일</td>
+				<td width="350">
+					<input type="email" name="email">
+				</td>	
+			</tr>
+			<tr hight="50">
+				<td width="150" align="center">전화번호</td>
+				<td width="350">
+					<input type="tel" name="tel">
+				</td>	
+			</tr>
+			<tr hight="50">
+				<td width="150" align="center">관심분야</td>
+				<td width="350">
+					<input type="checkbox" name="hobby" value="캠핑"> &nbsp;&nbsp;
+					<input type="checkbox" name="hobby" value="등산"> &nbsp;&nbsp;
+					<input type="checkbox" name="hobby" value="영화"> &nbsp;&nbsp;
+					<input type="checkbox" name="hobby" value="독서"> &nbsp;&nbsp;
+				</td>	
+			</tr>
+			
+		</table>
+	
+	</form>
+</body>
+</html>
