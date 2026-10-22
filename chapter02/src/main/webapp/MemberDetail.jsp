@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>개인정보 상세보기</title>
+<link rel="stylesheet" href="style/memberJoin.css">
 </head>
 <body>
 	<h2 align="center">회원 상세 정보</h2>
@@ -68,6 +69,14 @@
 					<td align="center" bgcolor="#eeeeee">남기는 말</td>
 					<td><%= rs.getString("info") %></td>
 				</tr>
+				<tr height="50">
+					<td colspan="2" align="center">
+						<button onclick="location.href='main.jsp?page=MemberUpdateForm&id=<%=rs.getString("id") %>'">회원수정</button>
+						<button onclick="location.href='main.jsp?page=MemberDeleteForm&id=<%=rs.getString("id") %>'">회원삭제</button>
+						<button onclick="location.href='main.jsp?page=MemberList'">목록보기</button>
+						<button onclick="location.href='main.jsp?page=MemberJoin'">회원가입</button>
+					</td>
+				</tr>
 			</table>
 		<%
 				}
@@ -88,7 +97,7 @@
 			//}
 		%>
 			<p align="center">
-				<a href="MemberList.jsp">회원 목록으로</a>
+				<a href="main.jsp?page=MemberList">회원 목록으로</a>
 			</p>
 </body>
 </html>

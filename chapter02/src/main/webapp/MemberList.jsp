@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>회원목록 전체 보기</title>
+<link rel="stylesheet" href="style/memberJoin.css">
 </head>
 <body>
 	<h2 align="center">가입한 회원 목록</h2>
@@ -57,7 +58,8 @@
 					<td><%= rs.getString("job") %></td>
 					<td><%= rs.getString("age") %></td>
 					<td><%= rs.getString("info") %></td>
-					<td><a href="MemberDetail.jsp?id=<%= rs.getString("id") %>">상세보기</a></td>
+					<td><a href="main.jsp?page=MemberDetail&id=<%= rs.getString("id") %>">상세보기</a></td>
+					<%-- <td><a href="MemberDetail.jsp?id=<%= rs.getString("id") %>">상세보기</a></td> --%>
 				</tr>
 		<%
 				}   // while 끝
@@ -81,7 +83,7 @@
 		%>
 			</table>
 			<p align="center">
-				<a href="MemberJoin.jsp">회원가입 화면으로</a>   <%-- 실제 폼 파일명으로 수정 --%>
+				<a href="main.jsp?page=MemberJoin">회원가입 화면으로</a>   <%-- 실제 폼 파일명으로 수정 --%>
 			</p>
 </body>
 </html>

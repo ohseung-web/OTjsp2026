@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="style/memberJoin.css">
 </head>
 <body>
 	<div class="container">
@@ -92,13 +93,13 @@
 				</tr>
 			</table>
 		</form>
-		
-		 <p align="center">
+		 <!-- <p align="center">
 			<a href="MemberList.jsp">가입한 회원 모두 보기</a>
-		 </p>
+		 </p> -->
 		<p align="center">
-			<input type="button" value="회원 전체 보기" onclick="location.href='MemberList.jsp'">
+			<input type="button" value="회원 전체 보기" onclick="location.href='main.jsp?page=MemberList'">
 		</p>
 	</div>
+		
 </body>
 </html>

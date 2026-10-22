@@ -136,42 +136,7 @@
         <script type="text/javascript">
         	alert("<%= msg %>");
         	history.go(-1); //이전 페이지로 이동
-        </script>
-        
-  <% }else{ %>
-  <!-- 조건을 모두 만족하면 아래 코드 실행되어야 함 -->
-  <div class="infoContainer">
-  	<table width="400" border="1">
-  		<tr height="50">
-					<td width="150" align="center">아이디</td>
-					<td width="350"><%= id %></td>	
-				</tr>
-				<tr height="50">
-					<td width="150" align="center">Email</td>
-					<td width="350"><%= email %></td>	
-				</tr>
-				<tr height="50">
-					<td width="150" align="center">전화번호</td>
-					<td width="350"><%= phone %></td>	
-				</tr>
-				<tr height="50">
-					<td width="150" align="center">관심분야</td>
-					<td width="350"><%= hobbyOne %></td>	
-				</tr>
-				<tr height="50">
-					<td width="150" align="center">직업</td>
-					<td width="350"><%= job %></td>	
-				</tr>
-				<tr height="50">
-					<td width="150" align="center">연령</td>
-					<td width="350"><%= age %></td>	
-				</tr>
-				<tr height="50">
-					<td width="150" align="center">남기는 말</td>
-					<td width="350"><%= info %></td>	
-				</tr>
-  	</table>
-  </div>
-  <% } %>	
+        </script>  
+  <% } %>
 </body>
 </html>

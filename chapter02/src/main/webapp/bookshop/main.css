@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+/* ===== 도서관리 프로그램 공통 스타일 (main.css) ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: "맑은 고딕", "Malgun Gothic", sans-serif;
+    font-size: 14px;
+    background-color: #ffffff;
+}
+
+/* 전체 레이아웃 */
+header, nav, section, footer {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+/* 헤더 */
+header {
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    background-color: #b8cce4;
+}
+header h1 { font-size: 24px; color: #222222; }
+
+/* 메뉴 */
+nav {
+    height: 36px;
+    line-height: 36px;
+    background-color: #8888dd;
+}
+nav ul { list-style: none; }
+nav ul li {
+    display: inline-block;
+    width: 150px;
+    text-align: center;
+}
+nav ul li a {
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+}
+nav ul li a:hover { text-decoration: underline; }
+
+/* 섹션 */
+section {
+    min-height: 480px;
+    padding: 30px 40px;
+    background-color: #e6e6e6;
+}
+section h2 { text-align: center; margin-bottom: 24px; font-size: 22px; }
+
+/* 푸터 */
+footer {
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    background-color: #b8cce4;
+    font-size: 13px;
+}
+
+/* 표 (목록 / 입력 폼 공통) */
+table {
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 2px;
+}
+th, td {
+    padding: 6px 10px;
+    border: 1px solid #cccccc;
+    background-color: #f2f2f2;
+}
+th { background-color: #e0e0e0; text-align: center; }
+td { text-align: center; }
+td.left  { text-align: left; }
+td.right { text-align: right; }
+
+/* 입력 폼 */
+input[type="text"] { width: 220px; padding: 3px 5px; }
+input[readonly]    { background-color: #dddddd; color: #555555; }
+select             { padding: 3px; }
+input[type="button"], input[type="submit"], input[type="reset"] {
+    padding: 4px 12px;
+    cursor: pointer;
+}
+
+/* 수정 / 삭제 링크 */
+td a { color: #1a3a8a; text-decoration: none; }
+td a:hover { text-decoration: underline; }
