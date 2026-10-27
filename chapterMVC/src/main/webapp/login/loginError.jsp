@@ -4,16 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>join Error</title>
+<title>Insert title here</title>
 </head>
 <body>
-	
-	<%-- 1. page 지시자에 EL이 꺼져 있는 경우
-	<%@ page isELIgnored="true" %>   이게 있으면 EL이 무시됨 --%>
-	
 	<script type="text/javascript">
 	   alert("${msg}");
-	   location.href ="index.jsp?section=member/MemberJoin.jsp";
+	   location.href = "index.jsp?section=login/loginForm.jsp";
 	</script>
 </body>
 </html>

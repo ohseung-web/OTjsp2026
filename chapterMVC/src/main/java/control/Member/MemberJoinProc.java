@@ -69,8 +69,15 @@ public class MemberJoinProc extends HttpServlet {
 			
 			//컨트롤러에서 또다른 컨트롤러를 호출해주어야 함.
 			//control -> member -> MemberListcon 서블릿을 생성한다.
-			RequestDispatcher rd = request.getRequestDispatcher("/MemberListCon.do");
-			rd.forward(request, response);
+//			RequestDispatcher rd = request.getRequestDispatcher("/MemberListCon.do");
+//			rd.forward(request, response);
+			
+
+			// ★ 성공 : forward → sendRedirect 로 변경 (PRG 패턴)
+			// 브라우저가 MemberListCon.do 를 새로 GET 요청하므로
+			// 새로고침(F5) 해도 회원가입이 다시 실행되지 않는다.
+			response.sendRedirect("MemberListCon.do");
+
 			
 		}else {
 			request.setAttribute("msg", "패스워드가 일치하지 않습니다.");

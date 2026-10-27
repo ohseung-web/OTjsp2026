@@ -6,7 +6,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <!-- <link rel="stylesheet" href="style/index.css"> -->
-<link rel="stylesheet" href="style/index02.css">
+<!-- <link rel="stylesheet" href="style/index02.css"> -->
+<link rel="stylesheet" href="${pageContext.request.contextPath}/style/index02.css">
 </head>
 <body>
 	<%

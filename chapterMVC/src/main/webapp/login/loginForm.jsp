@@ -1,12 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+
+<div class="loginwrap">
 	<h2>로그인</h2>
 	<form action="loginProc.do" method="post">
 		<table width="300" border="1">
@@ -16,7 +11,7 @@
 			</tr>
 			<tr height="40">
 				<td width="120">패스워드</td>
-				<td width="180"><input type="password" name="password"></td>
+				<td width="180"><input type="password" name="pass"></td>
 			</tr>
 			<tr height="40">
 				<td colspan="2">
@@ -25,5 +20,4 @@
 			</tr>
 		</table>
 	</form>
-</body>
-</html>
+</div>	
