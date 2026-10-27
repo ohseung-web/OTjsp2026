@@ -1,0 +1,252 @@
+@charset "UTF-8";
+
+/* =========================================
+   1. 전체 공통 레이아웃 (1000px 고정 기준)
+   ========================================= */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Malgun Gothic', dotum, sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+
+/* 전체를 감싸는 메인 컨테이너 (중앙 정렬, 1000px 고정) */
+.container {
+    width: 1000px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* =========================================
+   2. 헤더 (header.jsp) 스타일
+   ========================================= */
+header {
+    width: 1000px;
+    border-bottom: 2px solid #333;
+    background-color: #fff;
+}
+
+.headerWrap {
+    width: 1000px;
+}
+
+#navi {
+    width: 1000px;
+    border-collapse: collapse;
+}
+
+#navi td {
+    padding: 0 10px;
+}
+
+/* 네비게이션 메뉴 링크 스타일 */
+a.nav {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+a.nav:hover {
+    color: #0066cc;
+    text-decoration: underline;
+}
+
+/* span 태그로 감싼 로그인 사용자 이름 및 관리자 텍스트 */
+span.nav {
+    font-weight: bold;
+    font-size: 15px;
+    color: #555;
+}
+
+/* =========================================
+   3. 메인 배너 (index.jsp 본문 이미지)
+   ========================================= */
+.bgimg {
+    width: 1000px;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.bgimg img {
+    width: 960px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* =========================================
+   4. 본문 영역 (회원가입, 로그인, 마이페이지 공통 래퍼)
+   ========================================= */
+section {
+    min-height: 500px;
+    padding: 30px 0;
+}
+
+/* 회원가입 / 마이페이지 공통 폼 박스 */
+.joinwrap {
+    width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.joinwrap h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.joinwrap table {
+    width: 500px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+
+.joinwrap table td {
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+/* 로그인 폼 박스 */
+.loginwrap {
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.loginwrap h2 {
+    margin-bottom: 20px;
+}
+
+.loginwrap table {
+    width: 320px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+
+.loginwrap table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+/* =========================================
+   5. 회원 목록 및 검색 영역 (MemberList.jsp)
+   ========================================= */
+#listwrap {
+    width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#listwrap h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* 검색 바 */
+.searchbox {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.searchbox select,
+.searchbox input[type="text"] {
+    height: 28px;
+    padding: 2px 5px;
+    vertical-align: middle;
+}
+
+.btn-search, .btn-all {
+    height: 32px;
+    padding: 0 12px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+.btn-search:hover, .btn-all:hover {
+    background-color: #555;
+}
+
+.searchinfo {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+/* 회원 목록 테이블 */
+.listtable {
+    width: 960px;
+    border-collapse: collapse;
+    border-top: 2px solid #333;
+    border-bottom: 2px solid #333;
+    margin: 0 auto;
+}
+
+.listtable th {
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.listtable td {
+    border-bottom: 1px solid #eee;
+    padding: 10px 5px;
+    text-align: center;
+}
+
+.nodata {
+    text-align: center;
+    color: #777;
+    padding: 30px 0;
+}
+
+/* =========================================
+   6. 푸터 (footer.jsp) 스타일
+   ========================================= */
+footer {
+    width: 1000px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+.footerWrap {
+    width: 960px;
+    margin: 0 auto;
+    overflow: hidden; /* float 해제용 */
+}
+
+.footerimg {
+    float: left;
+    width: 150px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.footerimg img {
+    width: 120px;
+    height: auto;
+}
+
+.footerWrap p {
+    float: left;
+    width: 810px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+}
