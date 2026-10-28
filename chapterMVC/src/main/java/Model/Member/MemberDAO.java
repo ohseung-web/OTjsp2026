@@ -139,7 +139,7 @@ public class MemberDAO {
 				if (rs.next()) {
 					result = true;
 					System.out.println(rs.getString(1));
-					System.out.println(rs.getString(2));
+					
 				}
 			} catch (Exception e) {
 				e.printStackTrace();

@@ -1,0 +1,111 @@
+@charset "UTF-8";
+.boardwrap {
+    width: 750px;
+    margin: 50px auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+/* 제목 스타일 */
+.boardwrap h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2c3e50;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+/* 게시판 테이블 기본 설정 */
+.boardwrap table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e1e8ed;
+}
+
+/* 테이블 헤더 (번호, 제목, 작성자 등) */
+.boardwrap table tr:nth-of-type(2) {
+    background-color: #3498db;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* 테이블 행(tr) 및 셀(td) 디자인 */
+.boardwrap table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #e1e8ed;
+    font-size: 14px;
+    color: #444;
+}
+
+/* 마우스 호버 효과 */
+.boardwrap table tr:not(:first-child):not(:nth-of-type(2)):hover {
+    background-color: #f8f9fa;
+}
+
+/* 글쓰기 버튼 영역 */
+.boardwrap table tr:first-child td {
+    border-bottom: none;
+    background-color: transparent;
+    padding-bottom: 15px;
+}
+
+/* 글쓰기 버튼 디자인 */
+.boardwrap button {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.boardwrap button:hover {
+    background-color: #27ae60;
+}
+
+/* 게시글 제목 링크 디자인 */
+.boardwrap table a {
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+.boardwrap table a:hover {
+    color: #3498db;
+    text-decoration: underline;
+}
+
+/* 페이징 영역 스타일 */
+.pageing {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 15px;
+}
+
+/* 페이징 링크 ([이전], [1], [2], [3], [다음]) 디자인 */
+.pageing a {
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 0 3px;
+    color: #3498db;
+    background-color: #fff;
+    border: 1px solid #dcdde1;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+/* 페이징 버튼 호버 효과 */
+.pageing a:hover {
+    background-color: #3498db;
+    color: white;
+    border-color: #3498db;
+}

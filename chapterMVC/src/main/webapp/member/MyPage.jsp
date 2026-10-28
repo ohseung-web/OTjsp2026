@@ -30,6 +30,7 @@
 				<td width="150" align="center">아이디</td>
 				<td width="350">
 					<%-- 아이디는 수정 불가 --%>
+					<input type="hidden" value="${mdto.id}" name="id" />
 					<input type="text" value="<c:out value='${mdto.id}'/>" readonly>
 				</td>
 			</tr>
@@ -60,7 +61,12 @@
 			<tr height="50">
 				<td width="150" align="center">관심분야</td>
 				<td width="350" align="center">
-					<input type="checkbox" name="hobby" value="캠핑" id="camping"
+						<c:forTokens var="item" items="캠핑 등산 영화 독서" delims=" ">
+							<input type="checkbox" name="hobby" value="${item}" id="hobby_${item}" 
+								<c:if test="${mdto.hobby.contains(item)}">checked</c:if>>
+							<label for="hobby_${item}">${item}</label>&nbsp;&nbsp;
+						</c:forTokens>
+					<%-- <input type="checkbox" name="hobby" value="캠핑" id="camping"
 						${fn:contains(mdto.hobby, '캠핑') ? 'checked' : ''}>
 					<label for="camping">캠핑</label> &nbsp;&nbsp;
 					<input type="checkbox" name="hobby" value="등산" id="mount"
@@ -71,7 +77,7 @@
 					<label for="movie">영화</label> &nbsp;&nbsp;
 					<input type="checkbox" name="hobby" value="독서" id="book"
 						${fn:contains(mdto.hobby, '독서') ? 'checked' : ''}>
-					<label for="book">독서</label> &nbsp;&nbsp;
+					<label for="book">독서</label> &nbsp;&nbsp; --%>
 				</td>
 			</tr>
 			<tr height="50">

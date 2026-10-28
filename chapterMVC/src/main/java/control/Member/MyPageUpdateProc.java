@@ -38,37 +38,13 @@ public class MyPageUpdateProc extends HttpServlet {
 		// 한글이 깨지지 않도록 요청 데이터의 인코딩을 UTF-8 로 설정 (getParameter 호출 전에 해야 함)
 		request.setCharacterEncoding("utf-8");
 
-		// 1. 로그인 확인
-		// getSession(false) : 세션이 이미 있으면 가져오고, 없으면 새로 만들지 않고 null 을 리턴
-		HttpSession session = request.getSession(false);
-
-		// 세션이 없으면 null, 있으면 로그인할 때 저장해 둔 "id" 값을 꺼낸다. (Object 타입이라 String 으로 형변환)
-		String loginId = (session == null) ? null : (String) session.getAttribute("id");
-
-		// 로그인하지 않은 사용자라면 로그인 화면으로 보내고 처리를 끝낸다.
-		if (loginId == null) {
-			response.sendRedirect("index.jsp?section=login/loginForm.jsp");
-			return; // 아래 코드가 실행되지 않도록 메소드 종료
-		}
-
 		// DB 작업을 담당하는 DAO 객체 생성
 		MemberDAO mdao = new MemberDAO();
-
-		// 2. 현재 저장된 정보 조회 (id 는 폼 값이 아니라 세션 값을 사용 → 남의 정보 수정 방지)
-		// 폼에서 넘어온 id 를 믿으면 악의적으로 다른 사람 id 로 바꿔서 보낼 수 있기 때문에
-		// 로그인할 때 서버가 저장해 둔 세션의 id 를 사용한다.
-		MemberDTO old = mdao.getOneMember(loginId);
-
-		// DB 에 해당 회원이 없으면(탈퇴 등) 메인 화면으로 보낸다.
-		if (old == null) {
-			response.sendRedirect("index.jsp");
-			return;
-		}
+		String id = request.getParameter("id");       // 새 비밀번호
 
 		// 3. 비밀번호 : 비워두면 기존 비밀번호 유지, 입력하면 확인 후 변경
 		String pass = request.getParameter("pass");       // 새 비밀번호
 		String passchk = request.getParameter("passchk"); // 새 비밀번호 확인
-		String newPass = old.getPass();                   // 기본값은 기존 비밀번호(변경 안 하는 경우)
 
 		// 새 비밀번호를 입력한 경우에만 변경 절차를 진행한다.
 		if (pass != null && !pass.isEmpty()) {
@@ -77,7 +53,6 @@ public class MyPageUpdateProc extends HttpServlet {
 				response.sendRedirect("MyPage.do?result=passfail");
 				return;
 			}
-			newPass = pass; // 두 값이 같으면 새 비밀번호로 교체
 		}
 
 		// 4. 취미 (체크박스 : 하나도 선택 안 하면 null)
@@ -95,8 +70,8 @@ public class MyPageUpdateProc extends HttpServlet {
 		// 5. 수정할 정보 저장
 		// 화면에서 받은 값들을 MemberDTO 객체 하나에 담는다.
 		MemberDTO mdto = new MemberDTO();
-		mdto.setId(loginId);                                // where 조건에 쓸 아이디 (세션 값)
-		mdto.setPass(newPass);                              // 변경한 비밀번호 또는 기존 비밀번호
+		mdto.setId(id);                                // where 조건에 쓸 아이디 (세션 값)
+		mdto.setPass(pass);                              // 변경한 비밀번호 또는 기존 비밀번호
 		mdto.setEmail(request.getParameter("email"));
 		mdto.setTel(request.getParameter("tel"));
 		mdto.setHobby(oneHobby);

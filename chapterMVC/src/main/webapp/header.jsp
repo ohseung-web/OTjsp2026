@@ -12,7 +12,7 @@
 	     <tr height="50">
 	        <td align="center"><a href="#" class="nav">예약하기</a></td>
 	        <td align="center"><a href="#" class="nav">예약확인</a></td>
-	        <td align="center"><a href="#" class="nav">게시판</a></td>
+	        <td align="center"><a href="BoardListCon.do" class="nav">게시판</a></td>
 
 	        <c:choose>
 	          <%-- 로그인 상태 --%>
@@ -33,7 +33,7 @@
 	              <%-- 일반 회원 : MyPage + "kjb1045님 [로그아웃]" --%>
 	              <c:otherwise>
 	                <td align="center">
-	                   <a href="index.jsp?section=member/MyPage.jsp" class="nav">MyPage</a>
+	                   <a href="MyPage.do" class="nav">MyPage</a>
 	                </td>
 	                <td align="center">
 	                   <span class="nav"><c:out value="${sessionScope.id}"/>님</span>
