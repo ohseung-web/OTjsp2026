@@ -45,14 +45,16 @@ public class BoardListCon extends HttpServlet {
 		BoardDAO bdao = new BoardDAO();
 		count = bdao.getAllCount(); //전체 개시글 가져오는 쿼리 메소드
 		
-		//현재 보여질 페이지 시작번호를 설정
-		int startRow = (currentPage -1) + pageSize + 1;
-		int endRow = currentPage + pageSize;
+		//현재 보여질 페이지 시작번호를 설정 (MySQL LIMIT 시작 위치 공식)
+		// 올바른 LIMIT 시작 번호 공식은 (현재페이지 - 1) * 페이지당게시글수 여야 합니다. 
+		// (예: 1페이지는 0부터 시작, 2페이지는 10부터 시작)
+		int startRow = (currentPage - 1) * pageSize;
+		//int endRow = currentPage + pageSize;
 		
 		//10개를 기준으로 게시글을 리턴받아주는 메소드 호출
 		// 가방->데이터는 가방에 담긴다., 박스 -> 가방은 다시 박스에 담긴다.
 		// 박스 -> ArrayList, 가방 -> BoardDTO
-		ArrayList<BoardDTO> arr = bdao.getAllBoard(startRow, endRow);
+		ArrayList<BoardDTO> arr = bdao.getAllBoard(startRow, pageSize);
 		number = count -(currentPage -1) * pageSize;
 		
 		//페이징 처리하는 소스코드 변수초기화 작업 --------------------------------------
@@ -87,6 +89,9 @@ public class BoardListCon extends HttpServlet {
 		        endPage = pageCount;
 		    }
 		}
+		
+        /////////////////////////////////////////////////수정, 삭제시 비밀번호가 틀리다면
+		String msg = (String) request.getAttribute("msg");
 		
 		//BoardList.jsp View페이지로 request객체를 담아서 넘겨줌
 		request.setAttribute("all", arr);

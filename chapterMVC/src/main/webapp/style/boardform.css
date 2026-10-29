@@ -1,0 +1,87 @@
+@charset "UTF-8";
+/* 전체 감싸는 영역 */
+    .boardwrap {
+        width: 620px;
+        margin: 30px auto;
+        font-family: 'Malgun Gothic', sans-serif;
+    }
+    
+    /* 제목 스타일 */
+    .boardwrap h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    /* 테이블 스타일 (고정 width와 깔끔한 선 정리) */
+    .boardwrap table {
+        width: 600px;
+        border-collapse: collapse;
+        border-top: 2px solid #4285f4;
+        border-bottom: 2px solid #4285f4;
+    }
+
+    .boardwrap tr {
+        height: 40px;
+    }
+
+    .boardwrap th, .boardwrap td {
+        border: 1px solid #ddd;
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+
+    /* 항목 제목 셀 배경 */
+    .boardwrap td:first-child {
+        background-color: #f8f9fa;
+        text-align: center;
+        font-weight: bold;
+        color: #333;
+        width: 150px;
+    }
+
+    .boardwrap td:last-child {
+        width: 450px;
+    }
+
+    /* 입력창 공통 스타일 */
+    .boardwrap input[type="text"],
+    .boardwrap input[type="email"],
+    .boardwrap input[type="password"] {
+        width: 95%;
+        height: 26px;
+        padding: 2px 5px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+
+    /* textarea 스타일 */
+    .boardwrap textarea {
+        width: 95%;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        resize: vertical;
+    }
+
+    /* 하단 버튼 영역 스타일 */
+    .btn-group {
+        text-align: center;
+        background-color: #f8f9fa;
+    }
+
+    .boardwrap input[type="button"],
+    .boardwrap input[type="reset"] {
+        padding: 6px 14px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        cursor: pointer;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .boardwrap input[type="button"]:hover,
+    .boardwrap input[type="reset"]:hover {
+        background-color: #e9ecef;
+    }

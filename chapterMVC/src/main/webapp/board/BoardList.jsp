@@ -3,12 +3,18 @@
 <%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
 <link rel="stylesheet" href="style/boardlist.css" />
 
+<c:if test="${msg != null }">
+<script type="text/javascript">
+    alert("비밀번호를 확인하세요");
+</script>
+</c:if>
+
 <div class="boardwrap">
 		<h2> 전체 게시글 보기 </h2>
 		<table width="700" border="1" bordercolor="skyblue">
 			<tr height="40" >
 				<td colspan="5" align="right">
-				<button onclick="location.href='BoardWriteForm.jsp'" >글쓰기</button>
+				<button onclick="location.href='index.jsp?section=board/BoardWriteForm.jsp'" >글쓰기</button>
 				</td>
 			</tr>
 			<tr height="40">
