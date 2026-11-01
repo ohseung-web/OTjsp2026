@@ -1,8 +1,8 @@
 package control.board;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,22 +27,28 @@ public class BoardDeleteProcCon extends HttpServlet {
 		
 		// 사용자로 부터 넘어온 데이터 3개만 받는다.
 		int num = Integer.parseInt(request.getParameter("num"));
-		String userPw = request.getParameter("userPw");
-		String dbPw = request.getParameter("dbPw");
+        String userPw = request.getParameter("userPw");
+        String dbPw = request.getParameter("dbPw");
 
-		if(userPw.equals(dbPw)) {
+        response.setContentType("text/html; charset=UTF-8");
+        PrintWriter out = response.getWriter();
 
-		    BoardDAO bdao = new BoardDAO();
-		    bdao.deleteBoard(num);
-		    RequestDispatcher rdis = request.getRequestDispatcher("BoardListCon.do");
-		    rdis.forward(request, response);
+        if(userPw != null && userPw.equals(dbPw)) {
+            // 비밀번호가 일치하는 경우 소프트 삭제 실행
+            BoardDAO bdao = new BoardDAO();
+            bdao.deleteBoard(num); // chkDel = 1로 업데이트 됨
+            
+            // F5 새로고침 중복 방지를 위한 sendRedirect 적용
+            response.sendRedirect("BoardListCon.do");
 
-		} else {
-
-		    request.setAttribute("msg", "2");
-		    RequestDispatcher rdis = request.getRequestDispatcher("BoardListCon.do");
-		    rdis.forward(request, response);
-		}
+        } else {
+            // 비밀번호가 틀린 경우 alert 창 띄우고 이전 페이지로 이동
+            out.println("<script>");
+            out.println("alert('비밀번호가 일치하지 않습니다.');");
+            out.println("history.go(-1);");
+            out.println("</script>");
+            out.flush();
+        }
 	}
 
 }

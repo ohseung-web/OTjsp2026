@@ -1,0 +1,187 @@
+@charset "UTF-8";
+
+/* ===== 전체 래퍼 (목록/글쓰기 페이지와 통일) ===== */
+.boardwrap {
+    width: 760px;
+    margin: 50px auto 80px;
+    padding: 0 20px;
+    font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    color: #222;
+    box-sizing: border-box;
+}
+
+/* 제목 영역 */
+.boardwrap h2 {
+    margin: 0 0 24px 0;
+    font-size: 26px;
+    font-weight: 700;
+    color: #111;
+    text-align: center;
+    letter-spacing: -0.5px;
+}
+
+/* ===== 폼 & 테이블 초기화 (HTML border="1" 무력화) ===== */
+.boardwrap table {
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+    border-top: 2px solid #222; /* 상단 굵은 포인트 선 */
+    font-size: 14px;
+    background-color: #fff;
+}
+
+.boardwrap table tr,
+.boardwrap table td {
+    border: none;
+}
+
+/* 일반 입력 행 스타일 */
+.boardwrap table tr:not(:last-child) td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+/* 왼쪽 항목 이름 칸 (작성자, 제목, 이메일 등) */
+.boardwrap table tr:not(:last-child) td:first-child {
+    width: 140px;
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    border-right: 1px solid #f1f3f5;
+}
+
+/* 오른쪽 입력창 칸 */
+.boardwrap table tr:not(:last-child) td:last-child {
+    text-align: left;
+}
+
+/* ===== 입력 필드 (input, textarea) ===== */
+.boardwrap input[type="text"],
+.boardwrap input[type="email"],
+.boardwrap input[type="password"],
+.boardwrap textarea {
+    width: 100%;
+    padding: 10px 12px;
+    font-family: inherit;
+    font-size: 14px;
+    color: #212529;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 작성자, 비밀번호 칸 너비 제한 */
+.boardwrap input[name="writer"],
+.boardwrap input[name="password"] {
+    max-width: 240px;
+}
+
+.boardwrap input[name="email"] {
+    max-width: 340px;
+}
+
+/* 입력창 클릭(포커스) 시 테두리 강조 */
+.boardwrap input[type="text"]:focus,
+.boardwrap input[type="email"]:focus,
+.boardwrap input[type="password"]:focus,
+.boardwrap textarea:focus {
+    border-color: #222;
+    box-shadow: 0 0 0 3px rgba(34, 34, 34, 0.06);
+}
+
+/* 텍스트 영역(글내용) 설정 */
+.boardwrap textarea {
+    height: 220px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+/* ===== 마지막 행: 하단 버튼 영역 ===== */
+.boardwrap table tr:last-child td {
+    padding: 28px 0 0 0;
+    border-bottom: none;
+    text-align: center;
+}
+
+/* 버튼 공통 스타일 */
+.boardwrap input[type="submit"],
+.boardwrap input[type="button"],
+.boardwrap input[type="reset"] {
+    padding: 10px 20px;
+    margin: 0 3px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* [글쓰기], [답글쓰기완료] 메인 버튼 (다크 차콜) */
+.boardwrap input[type="submit"],
+.boardwrap input[value="글쓰기"],
+.boardwrap input[value="답글쓰기완료"] {
+    color: #fff !important;
+    background-color: #222 !important;
+    border: 1px solid #222 !important;
+}
+
+
+.boardwrap input[type="submit"]:hover,
+.boardwrap input[value="글쓰기"]:hover,
+.boardwrap input[value="답글쓰기완료"]:hover {
+    background-color: #444;
+    border-color: #444;
+}
+
+/* [취소], [전체 게시글보기] 서브 버튼 (화이트 & 그레이 라인) */
+.boardwrap input[type="reset"],
+.boardwrap input[type="button"] {
+    color: #495057;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+}
+
+.boardwrap input[type="reset"]:hover,
+.boardwrap input[type="button"]:hover {
+    color: #212529;
+    background-color: #f8f9fa;
+    border-color: #adb5bd;
+}
+
+/* 버튼 클릭 시 살짝 눌리는 효과 */
+.boardwrap input[type="submit"]:active,
+.boardwrap input[type="button"]:active,
+.boardwrap input[type="reset"]:active {
+    transform: translateY(1px);
+}
+
+/* ===== 반응형 ===== */
+@media (max-width: 768px) {
+    .boardwrap {
+        width: auto;
+        margin: 20px 10px;
+        padding: 15px;
+    }
+
+    .boardwrap h2 {
+        font-size: 22px;
+    }
+
+    .boardwrap td {
+        padding: 8px;
+        font-size: 12px;
+        word-break: break-word;
+    }
+
+    .boardwrap input[type="submit"],
+    .boardwrap input[type="button"],
+    .boardwrap input[type="reset"] {
+        padding: 9px 12px;
+        font-size: 12px;
+    }
+}

@@ -272,5 +272,42 @@ public class MemberDAO {
 			return m;
 		}
 
+		// 메인 상품 모두 리턴하는 메소드
+		public ArrayList<CarDTO> getAllProduct(){
+			
+			ArrayList<CarDTO> a = new ArrayList<CarDTO>();
+			try {
+				 con = Util.getConnection();
+				 //쿼리준비
+				 String sql ="select * from carProduct";
+				 //쿼리실행할 객체 선언
+				 pstmt = con.prepareStatement(sql);
+				 
+				 //쿼리실행
+				 rs = pstmt.executeQuery();
+	             //반복문을 돌려서 회원정보를 저장한다.
+				 while(rs.next()) {
+					 CarDTO cdto = new CarDTO();
+					 cdto.setNo(rs.getInt(1));
+					 cdto.setCarName(rs.getString(2));
+					 cdto.setPrice(rs.getInt(3));
+					 cdto.setCompany(rs.getString(4));
+					 cdto.setImg(rs.getString(5));
+					 cdto.setInfo(rs.getString(6));
+					 //ArrayList에 MemberDTO를 저장한다.
+					 a.add(cdto);
+				 }
+			}catch(Exception e) {
+				e.printStackTrace();
+			}finally {
+				try {
+					if(rs !=null) rs.close();
+					if(pstmt !=null) pstmt.close();
+					if(con !=null) con.close();
+				}catch(Exception e) {e.printStackTrace();}
+			}
+			return a;
+		}
+			
 		
 }

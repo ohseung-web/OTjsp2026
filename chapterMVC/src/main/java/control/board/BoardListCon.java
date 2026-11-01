@@ -27,7 +27,7 @@ public class BoardListCon extends HttpServlet {
 
 	protected void reqPro(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//화면에 보여질 게시글의 개수를 지정한다.
-		int pageSize=10;
+		int pageSize=5;
 		//현재 보여지고 있는 페이지의 넘버값을 읽어들임, 예)현재 [1][2][3]..., 현재 3페이지면 3을 읽어들임
 		String pageNum = request.getParameter("pageNum");
 		//현재 pageNum값은 null로 넘어오기때문에 null처리한다.
@@ -94,7 +94,7 @@ public class BoardListCon extends HttpServlet {
 		String msg = (String) request.getAttribute("msg");
 		
 		//BoardList.jsp View페이지로 request객체를 담아서 넘겨줌
-		request.setAttribute("all", arr);
+		request.setAttribute("blist", arr);
 		request.setAttribute("number", number);
 		request.setAttribute("pageSize", pageSize);
 		request.setAttribute("count", count);

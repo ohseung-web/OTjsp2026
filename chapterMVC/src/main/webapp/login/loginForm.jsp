@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<div class="loginwrap">
+<link rel="stylesheet" href="style/boardwrite.css">
+<div class="boardwrap">
+<!-- <div class="loginwrap"> -->
 	<h2>로그인</h2>
 	<form action="loginProc.do" method="post">
 		<table width="300" border="1">

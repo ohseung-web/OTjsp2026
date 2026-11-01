@@ -1,6 +1,7 @@
 package control.board;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 @WebServlet("/BoardReWriterCon.do")
@@ -20,6 +22,22 @@ public class BoardReWriterCon extends HttpServlet {
 		reqPro(request, response);
 	}
 	protected void reqPro(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		// ===== [보안 검증] 관리자(admin) 체크 추가 =====
+		HttpSession session = request.getSession();
+		String id = (String) session.getAttribute("id");
+		
+		if(id == null || !id.equals("admin")) {
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.println("<script>");
+			out.println("alert('관리자만 답글을 작성할 수 있습니다.');");
+			out.println("history.go(-1);");
+			out.println("</script>");
+			out.close();
+			return; // 관리자가 아니면 여기서 실행 중지
+		}
+		
 		// BoardInfo에서 넘겨준 데이터 저장
         int num = Integer.parseInt(request.getParameter("num"));
         int ref = Integer.parseInt(request.getParameter("ref"));

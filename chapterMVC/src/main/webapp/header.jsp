@@ -6,7 +6,7 @@
 	   <table width="1000" id="navi">
 	     <tr height="70">
 	        <td colspan="6" align="left">
-	          <a href="index.jsp"><img src="img/sk_logo.png" height="65"></a>
+	          <a href="CarProductListPro.do"><img src="img/sk_logo.png" height="65"></a>
 	        </td>
 	     </tr>
 	     <tr height="50">

@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-
-<div class="updatewrap">
+<link rel="stylesheet" href="style/boardwrite.css">
+<div class="boardwrap">
     <h2> 게시글 수정 </h2>
     <form action="BoardUpdateProcCon.do" method="post">
         <table width="600" border="1">

@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+/* ===== 공통 ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Batang", "바탕", "Times New Roman", serif;
+  font-size: 14px;
+  color: #000;
+}
+
+/* ===== header : 프로그램 제목 영역 ===== */
+header {
+  width: 100%;
+  height: 100px;
+  line-height: 100px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 100px;
+}
+
+/* ===== nav : 메뉴 영역 ===== */
+nav {
+  width: 100%;
+  height: 32px;
+  line-height: 32px;
+  background-color: #666;
+  padding-left: 10px;
+}
+
+nav a {
+  display: inline-block;
+  margin-right: 14px;
+  color: #fff;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* ===== section : 본문 영역 ===== */
+section {
+  width: 100%;
+  min-height: 750px; 
+  background-color: #ccc;
+  padding: 15px 0 30px 0;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 22px;
+  font-weight: normal;
+  margin-bottom: 25px;
+}
+
+/* ===== footer : 저작권 영역 ===== */
+footer {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background-color: #333;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* ===== table : 조회/입력 화면 공통 ===== */
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  background-color: #ccc;
+}
+
+th,
+td {
+  border: 1px solid #333;
+  padding: 4px 12px;
+  font-size: 13px;
+  text-align: left;
+}
+
+td.right,
+th.right {
+  text-align: right;
+}
+
+/* ===== form : 수강신청 화면 ===== */
+input[type="text"],
+select {
+  height: 22px;
+  font-size: 12px;
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  margin: 4px 2px;
+  padding: 1px 6px;
+  font-size: 11px;
+}

@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import Model.board.BoardDAO;
 import Model.board.BoardDTO;
@@ -27,7 +28,11 @@ public class BoardReWriterProcCon extends HttpServlet {
 	protected void reqPro(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 
-        // BoardDTO에 넘어온 데이터를 저장
+		// 2. 세션에서 로그인한 아이디 가져오기
+		HttpSession session = request.getSession();
+		String id = (String) session.getAttribute("id");
+        
+		// BoardDTO에 넘어온 데이터를 저장
         BoardDTO bdto = new BoardDTO();
         bdto.setWriter(request.getParameter("writer"));
         bdto.setSubject(request.getParameter("subject"));
@@ -38,6 +43,9 @@ public class BoardReWriterProcCon extends HttpServlet {
         bdto.setRef(Integer.parseInt(request.getParameter("ref")));
         bdto.setRe_step(Integer.parseInt(request.getParameter("re_step")));
 
+        // 3. DTO에 아이디 세팅하기
+        bdto.setId(id);
+        
         BoardDAO bdao = new BoardDAO();
         // BoardDAO에 reInsertBoard() 메서드를 작성한다.
         bdao.reinsertBoard(bdto);

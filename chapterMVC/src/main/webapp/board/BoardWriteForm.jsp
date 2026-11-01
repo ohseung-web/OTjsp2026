@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="style/boardform.css">
+<link rel="stylesheet" href="style/boardwrite.css">
 <div class="boardwrap">
 <h2> 게시글 쓰기 </h2>
 <form action="BoardWriteProcCon.do" method="post" name="formname">
@@ -34,6 +34,7 @@
         </tr>
     </table>
 </form>
+</div>
 <script>
     function BoardWriteException(){
         let formname = document.formname;
@@ -49,6 +50,7 @@
             cont.focus();
             return;
         }
+        
         formname.submit();
     }
 </script>

@@ -13,7 +13,8 @@
 	<%
 	    String section = request.getParameter("section");
 	    if(section == null){
-	    	section = "section.jsp";
+	    	response.sendRedirect("CarProductListPro.do");
+	        return;
 	    }
 	%>
 	<div class="container">
