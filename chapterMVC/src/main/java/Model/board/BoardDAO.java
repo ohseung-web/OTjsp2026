@@ -23,7 +23,7 @@ public class BoardDAO {
 				//쿼리준비
 				//String sql="select count(*) from board ";
 				// [수정] 삭제되지 않은 글(chkDel = 0)만 개수를 세도록 조건 추가!
-		        String sql = "select count(*) from board where chkDel = 0";
+		        String sql = "select count(*) from board where chkDel = 0 ";
 				//쿼리를 실행할 객체 선언
 				pstmt = con.prepareStatement(sql);
 				//쿼리 실행후 결과를 리턴
@@ -33,6 +33,39 @@ public class BoardDAO {
 					count = rs.getInt(1);//전체게시글수
 				}
 				 
+			}catch(Exception e) {
+				e.printStackTrace();
+			}finally {
+				try {
+					if(rs !=null) rs.close();
+					if(pstmt !=null) pstmt.close();
+					if(con !=null) con.close();
+				}catch(Exception e) {e.printStackTrace();}
+			}
+			
+			return count;
+		}
+		
+		public int getAllSearchCount(String searchType, String keyword) {
+			
+			//게시글 전체수를 저장하는 변수
+			int count =0;
+			
+			try {
+				con = Util.getConnection();
+				//쿼리준비
+				//String sql="select count(*) from board ";
+				// [수정] 삭제되지 않은 글(chkDel = 0)만 개수를 세도록 조건 추가!
+				String sql = "select count(*) from board where chkDel = 0 and "+searchType+" like '%"+keyword+"%'";
+				//쿼리를 실행할 객체 선언
+				pstmt = con.prepareStatement(sql);
+				//쿼리 실행후 결과를 리턴
+				rs = pstmt.executeQuery();
+				
+				if(rs.next()){
+					count = rs.getInt(1);//전체게시글수
+				}
+				
 			}catch(Exception e) {
 				e.printStackTrace();
 			}finally {
@@ -84,6 +117,55 @@ public class BoardDAO {
 					a.add(bdto);
 				}
 				 
+			}catch(Exception e) {
+				e.printStackTrace();
+			}finally {
+				try {
+					if(rs !=null) rs.close();
+					if(pstmt !=null) pstmt.close();
+					if(con !=null) con.close();
+				}catch(Exception e) {e.printStackTrace();}
+			}
+			
+			return a;
+		}
+		
+		public ArrayList<BoardDTO> getAllSearchBoard(int startRow, int pageSize, String searchType, String keyword) {
+			
+			ArrayList<BoardDTO> a = new ArrayList<BoardDTO>();
+			
+			try {
+				con = Util.getConnection();
+				//쿼리준비
+				// 쿼리준비: limit [시작위치], [가져올개수]
+				// 예시: 전체 게시글 목록을 가져오는 메서드 내부의 쿼리
+				//String sql = "select * from board where chkDel = 0 order by ref desc, re_step asc";
+				String sql="select * from board where chkDel = 0 and "+searchType+" like '%"+keyword+"%'"+" order by ref desc, re_step asc limit ?, ? ";
+				//쿼리를 실행할 객체 선언
+				pstmt = con.prepareStatement(sql);
+				pstmt.setInt(1, startRow);
+				pstmt.setInt(2, pageSize);
+				//쿼리 실행후 결과를 리턴
+				rs = pstmt.executeQuery();
+				
+				while(rs.next()){
+					BoardDTO bdto = new BoardDTO();
+					bdto.setNum(rs.getInt(1));
+					bdto.setWriter(rs.getString(2));
+					bdto.setEmail(rs.getString(3));
+					bdto.setSubject(rs.getString(4));
+					bdto.setPassword(rs.getString(5));
+					bdto.setReg_date(rs.getString(6));
+					bdto.setRef(rs.getInt(7));
+					bdto.setRe_step(rs.getInt(8));
+					bdto.setReadcount(rs.getInt(9));
+					bdto.setContent(rs.getString(10));
+					bdto.setId(rs.getString(11));
+					
+					//패키징한 데이터를 ArrayList에 저장
+					a.add(bdto);
+				}
+				
 			}catch(Exception e) {
 				e.printStackTrace();
 			}finally {

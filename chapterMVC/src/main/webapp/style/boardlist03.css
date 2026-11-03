@@ -1,0 +1,153 @@
+@charset "UTF-8";
+
+/* 전체 감싸는 레이아웃 */
+.boardwrap {
+    width: 750px;
+    margin: 50px auto;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #222;
+}
+
+/* 상단 제목 스타일 */
+.boardwrap h2 {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #111;
+}
+
+/* 검색 영역 스타일 */
+.searchwrap {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.searchwrap form {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+/* 검색 select 및 input 스타일 */
+.searchwrap select,
+.searchwrap input[type="text"] {
+    padding: 7px 12px;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+    background-color: #fff;
+}
+
+.searchwrap select:focus,
+.searchwrap input[type="text"]:focus {
+    border-color: #333;
+}
+
+.searchwrap input[type="text"] {
+    width: 200px;
+}
+
+/* 버튼 공통 디자인 */
+.subBtn, .btnAll, .boardwrap button {
+    padding: 7px 14px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* '전체보기' 버튼 스타일 */
+.btnAll {
+    background-color: #fff;
+    border: 1px solid #dcdcdc;
+    color: #333;
+    text-decoration: none;
+}
+
+.btnAll:hover {
+    background-color: #f8f9fa;
+    border-color: #adadad;
+}
+
+/* '검색' 및 '글쓰기' 버튼 스타일 */
+.subBtn, .boardwrap button {
+    background-color: #222;
+    color: #fff;
+    border: 1px solid #222;
+}
+
+.subBtn:hover, .boardwrap button:hover {
+    background-color: #000;
+    border-color: #000;
+}
+
+/* 게시판 테이블 스타일 */
+.boardwrap table {
+    width: 100%;
+    border-collapse: collapse;
+   /*  border-top: 2px solid #222; */
+    border-bottom: 1px solid #dcdcdc;
+    font-size: 14px;
+}
+
+.boardwrap table th,
+.boardwrap table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* [글쓰기] 버튼이 있는 첫 번째 행의 테두리 및 여백 조정 (위, 좌, 우 선 제거) */
+.boardwrap tr:first-child td {
+    border: none;
+    padding-bottom: 8px;
+    background-color: transparent;
+}
+
+/* 테이블 헤더(컬럼명 행) 배경 및 폰트 강조 */
+.boardwrap tr:nth-child(2) {
+    background-color: #fcfcfc;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+/* 게시글 제목 링크 스타일 */
+.boardwrap td a {
+    color: #333;
+    text-decoration: none;
+}
+
+.boardwrap td a:hover {
+    text-decoration: underline;
+    color: #000;
+}
+
+/* 페이징 영역 스타일 */
+.pageing {
+    margin-top: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.pageing a {
+    display: inline-block;
+    padding: 6px 10px;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    color: #555;
+    text-decoration: none;
+    font-size: 14px;
+    background-color: #fff;
+}
+
+.pageing a:hover {
+    background-color: #f2f2f2;
+    color: #111;
+    border-color: #adadad;
+}

@@ -1,10 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+ 
  <link rel="stylesheet" href="style/boardlist.css" />
 
 <div class="boardwrap">
 	<h2> 전체 게시글 보기</h2>
+	<div id="searchwrap">
+		<form action="BoardListCon.do" method="get" >
+			<select name="searchType">
+				<option value="subject" ${searchType=='subject'?'selected':''}>제목</option>
+				<option value="writer" ${searchType=='writer'?'selected':''}>작성자</option>
+				<option value="content" ${searchType=='content'?'selected':''}>글내용</option>
+			</select>
+			<input type="text" name="keyword" placeholder="검색어를 입력하세요">
+			<input type="submit" value="검색" class="subBtn" /> 
+			<input type="button" value="전체보기" class="btnAll" onclick="location.href='BoardListCon.do'"/> 
+		</form>
+	</div>
 	<table width="700" border="1">
 		<tr height="40">
 			<td colspan="5" align="right">

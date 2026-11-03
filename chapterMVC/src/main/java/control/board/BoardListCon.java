@@ -43,7 +43,23 @@ public class BoardListCon extends HttpServlet {
 		int currentPage = Integer.parseInt(pageNum);
 		//전체 게시글의 개수를 가져와야 하기에 데이터베이스 객체생성한다.
 		BoardDAO bdao = new BoardDAO();
-		count = bdao.getAllCount(); //전체 개시글 가져오는 쿼리 메소드
+		
+		String searchType=request.getParameter("searchType");
+		String keyword=request.getParameter("keyword");
+		
+		boolean isSearch;
+		
+		if((searchType == null || searchType.isEmpty()) && (keyword == null || keyword.isEmpty())) {
+			isSearch = false;//검색어가 입력되지 않는 경우
+		}else {
+			isSearch= true; //검색어 입력된 경우
+		}
+		
+		if(isSearch == true) {
+			count = bdao.getAllSearchCount(searchType,keyword); //전체 개시글 가져오는 쿼리 메소드
+		}else {
+			count = bdao.getAllCount(); //전체 개시글 가져오는 쿼리 메소드			
+		}
 		
 		//현재 보여질 페이지 시작번호를 설정 (MySQL LIMIT 시작 위치 공식)
 		// 올바른 LIMIT 시작 번호 공식은 (현재페이지 - 1) * 페이지당게시글수 여야 합니다. 
@@ -54,7 +70,14 @@ public class BoardListCon extends HttpServlet {
 		//10개를 기준으로 게시글을 리턴받아주는 메소드 호출
 		// 가방->데이터는 가방에 담긴다., 박스 -> 가방은 다시 박스에 담긴다.
 		// 박스 -> ArrayList, 가방 -> BoardDTO
-		ArrayList<BoardDTO> arr = bdao.getAllBoard(startRow, pageSize);
+		ArrayList<BoardDTO> arr;
+		
+		if(isSearch==true) {
+			arr=bdao.getAllSearchBoard(startRow, pageSize, searchType, keyword);
+		}else {
+			arr=bdao.getAllBoard(startRow, pageSize);
+		}
+		
 		number = count -(currentPage -1) * pageSize;
 		
 		//페이징 처리하는 소스코드 변수초기화 작업 --------------------------------------
@@ -104,6 +127,9 @@ public class BoardListCon extends HttpServlet {
 		request.setAttribute("pageBlock", pageBlock);
 		request.setAttribute("startPage", startPage);
 		request.setAttribute("endPage", endPage);
+		
+		request.setAttribute("searchType", searchType);
+		request.setAttribute("keyword", keyword);
 		
 		RequestDispatcher rd = request.getRequestDispatcher("index.jsp?section=board/BoardList.jsp");
 		rd.forward(request, response);
