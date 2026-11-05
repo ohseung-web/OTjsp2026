@@ -1,0 +1,494 @@
+@charset "UTF-8";
+
+/* 기본 설정 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Malgun Gothic", sans-serif;
+    color: #14284a;
+    background: #f7faff;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* 전체 레이아웃 */
+.booking-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* 왼쪽 사이드 메뉴 */
+.booking-sidebar {
+    width: 240px;
+    flex-shrink: 0;
+    background: linear-gradient(#f5f8ff, #e5efff);
+    border-right: 1px solid #d9e5f5;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 로고 */
+.booking-logo {
+    text-align: center;
+    padding: 35px 10px 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.logo-icon {
+    font-size: 40px;
+    color: #164b87;
+}
+
+.booking-logo h2 {
+    font-size: 24px;
+    color: #123d74;
+    margin: 5px 0;
+}
+
+.booking-logo p {
+    font-size: 10px;
+    color: #234b7b;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* 사이드 메뉴 */
+.booking-nav {
+    padding: 20px 12px;
+    position: relative;
+    z-index: 1;
+}
+
+.booking-nav a {
+    display: block;
+    padding: 16px 18px;
+    margin-bottom: 7px;
+    border-radius: 9px;
+    text-decoration: none;
+    color: #14284a;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.booking-nav a:hover {
+    background: #dce9fa;
+}
+
+.booking-nav a.active {
+    background: linear-gradient(90deg, #0d3e7b, #1761a6);
+    color: white;
+}
+
+/* 사이드 하단 이미지 */
+.sidebar-photo {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 300px;
+    background:
+        linear-gradient(to bottom, #e5efff, transparent),
+        url("../img/hotel2.jpg") center/cover;
+    opacity: 0.45;
+}
+
+/* 오른쪽 메인 */
+.booking-main {
+    flex: 1;
+    min-width: 0;
+    background: white;
+}
+
+/* 상단 배너 */
+.booking-banner {
+    min-height: 165px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 30px 45px;
+    color: white;
+    background:
+        linear-gradient(90deg,
+            rgba(13,55,108,0.98),
+            rgba(18,67,119,0.90),
+            rgba(18,67,119,0.20)),
+        url("../img/booking-banner.jpg") center/cover;
+}
+
+.banner-icon {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 42px;
+}
+
+.booking-banner h1 {
+    font-size: 32px;
+    margin: 0 0 12px;
+}
+
+.booking-banner p {
+    font-size: 14px;
+    margin: 6px 0;
+    color: #e8f1ff;
+}
+
+/* 본문 */
+.booking-container {
+    padding: 25px 30px 40px;
+    background: white;
+    border-radius: 20px 20px 0 0;
+    margin-top: -12px;
+    position: relative;
+}
+
+/* 예약 상태별 탭 */
+.booking-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.booking-tabs a {
+    flex: 1;
+    padding: 16px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    background: #edf2fb;
+    color: #173b69;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.booking-tabs a.active {
+    background: #124b8b;
+    color: white;
+}
+
+.booking-tabs a:hover:not(.active) {
+    background: #dce8f8;
+}
+
+/* 목록 제목 */
+.booking-title {
+    margin-bottom: 25px;
+}
+
+.booking-title h2 {
+    font-size: 23px;
+    margin: 0 0 10px;
+    color: #173b69;
+}
+
+.booking-title p {
+    font-size: 13px;
+    color: #8292a5;
+}
+
+/* 예약 카드 */
+.booking-card {
+    background: white;
+    border: 1px solid #dce6f3;
+    border-radius: 14px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.booking-card:hover {
+    box-shadow: 0 8px 25px rgba(20,60,100,0.08);
+}
+
+/* 카드 상단 */
+.booking-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 17px 22px;
+    background: #f4f8fe;
+    border-bottom: 1px solid #e0eaf6;
+}
+
+.booking-number {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #244a74;
+}
+
+.booking-date {
+    display: block;
+    margin-top: 7px;
+    font-size: 12px;
+    color: #8292a5;
+}
+
+/* 예약 상태 표시 */
+.booking-status {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.booking-status.complete {
+    background: #e1f0ff;
+    color: #1761a6;
+}
+
+.booking-status.used {
+    background: #e7f5ec;
+    color: #24824d;
+}
+
+.booking-status.canceled {
+    background: #fff0f0;
+    color: #d64a4a;
+}
+
+/* 카드 본문 */
+.booking-card-body {
+    display: flex;
+    gap: 25px;
+    padding: 25px;
+}
+
+/* 숙소 이미지 */
+.booking-img {
+    width: 220px;
+    height: 155px;
+    border-radius: 10px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* 숙소 정보 */
+.booking-info {
+    flex: 1;
+}
+
+.booking-info h3 {
+    margin: 0 0 10px;
+    font-size: 21px;
+    color: #173b69;
+}
+
+.room-name {
+    color: #687f98;
+    font-size: 14px;
+    margin: 0 0 20px;
+}
+
+.booking-dates {
+    display: flex;
+    gap: 35px;
+    flex-wrap: wrap;
+}
+
+.booking-dates p {
+    margin: 0 0 10px;
+    font-size: 14px;
+    color: #344f6c;
+}
+
+.booking-dates strong {
+    display: block;
+    margin-bottom: 8px;
+    color: #8292a5;
+    font-size: 12px;
+}
+
+.booking-nights {
+    margin: 8px 0;
+    color: #1761a6;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.cancel-date {
+    color: #d64a4a;
+    font-size: 13px;
+}
+
+/* 카드 하단 */
+.booking-card-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 16px 22px;
+    border-top: 1px solid #e7edf5;
+}
+
+/* 공통 버튼 */
+.detail-btn,
+.cancel-btn,
+.review-btn {
+    padding: 11px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.detail-btn {
+    background: white;
+    border: 1px solid #c9d8eb;
+    color: #24517d;
+}
+
+.detail-btn:hover {
+    background: #edf5ff;
+}
+
+.cancel-btn {
+    background: #124b8b;
+    border: 1px solid #124b8b;
+    color: white;
+}
+
+.cancel-btn:hover {
+    background: #0a3464;
+}
+
+.review-btn {
+    background: #eaf2fd;
+    border: 1px solid #c9d8eb;
+    color: #124b8b;
+}
+
+.review-btn:hover {
+    background: #d9e9fc;
+}
+
+/* 페이지 번호 */
+.booking-paging {
+    text-align: center;
+    margin: 35px 0;
+}
+
+.booking-paging a {
+    display: inline-block;
+    padding: 10px 14px;
+    margin: 0 3px;
+    border: 1px solid #d5e0f0;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #173b69;
+    font-size: 14px;
+}
+
+.booking-paging a.active {
+    background: #124b8b;
+    color: white;
+}
+
+/* 하단 안내문 */
+.booking-notice {
+    display: flex;
+    gap: 20px;
+    padding: 22px 25px;
+    border-radius: 12px;
+    background: #eaf2fd;
+    margin-top: 25px;
+}
+
+.notice-icon {
+    font-size: 25px;
+    color: #124b8b;
+}
+
+.booking-notice p {
+    margin: 7px 0;
+    font-size: 13px;
+    color: #253c5b;
+}
+
+/* 태블릿 */
+@media (max-width: 900px) {
+    .booking-sidebar {
+        width: 190px;
+    }
+
+    .booking-card-body {
+        gap: 15px;
+    }
+
+    .booking-img {
+        width: 160px;
+        height: 130px;
+    }
+}
+
+/* 모바일 */
+@media (max-width: 650px) {
+    .booking-layout {
+        flex-direction: column;
+    }
+
+    .booking-sidebar {
+        width: 100%;
+    }
+
+    .booking-logo {
+        padding: 15px;
+    }
+
+    .booking-nav {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+
+    .booking-nav a {
+        padding: 10px;
+    }
+
+    .sidebar-photo {
+        display: none;
+    }
+
+    .booking-banner {
+        padding: 25px 20px;
+    }
+
+    .booking-container {
+        padding: 20px 12px;
+    }
+
+    .booking-card-body {
+        flex-direction: column;
+    }
+
+    .booking-img {
+        width: 100%;
+        height: 190px;
+    }
+
+    .booking-card-header {
+        flex-wrap: wrap;
+    }
+
+    .booking-dates {
+        gap: 20px;
+    }
+
+    .booking-tabs a {
+        padding: 12px 5px;
+        font-size: 12px;
+    }
+}

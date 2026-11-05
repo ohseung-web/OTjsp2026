@@ -1,0 +1,542 @@
+@charset "UTF-8";
+
+
+/* 기본 설정 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Malgun Gothic", sans-serif;
+    color: #14284a;
+    background: #f7faff;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+}
+
+/* 전체 레이아웃 */
+.review-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* 왼쪽 사이드 메뉴 */
+.review-sidebar {
+    width: 240px;
+    flex-shrink: 0;
+    background: linear-gradient(#f5f8ff, #e5efff);
+    border-right: 1px solid #d9e5f5;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 로고 */
+.review-logo {
+    text-align: center;
+    padding: 35px 10px 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.logo-icon {
+    font-size: 40px;
+    color: #164b87;
+}
+
+.review-logo h2 {
+    font-size: 24px;
+    color: #123d74;
+    margin: 5px 0;
+}
+
+.review-logo p {
+    font-size: 10px;
+    margin: 0;
+    color: #234b7b;
+    font-weight: bold;
+}
+
+/* 사이드 메뉴 */
+.review-nav {
+    padding: 20px 12px;
+    position: relative;
+    z-index: 1;
+}
+
+.review-nav a {
+    display: block;
+    padding: 16px 18px;
+    margin-bottom: 7px;
+    border-radius: 9px;
+    text-decoration: none;
+    color: #14284a;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.review-nav a:hover {
+    background: #dce9fa;
+}
+
+.review-nav a.active {
+    background: linear-gradient(90deg, #0d3e7b, #1761a6);
+    color: white;
+}
+
+/* 사이드 하단 숙소 이미지 */
+.sidebar-photo {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 300px;
+    background:
+        linear-gradient(to bottom, #e5efff, transparent),
+        url("../img/hotel2.jpg") center/cover;
+    opacity: 0.45;
+}
+
+/* 오른쪽 메인 */
+.review-main {
+    flex: 1;
+    min-width: 0;
+    background: #fff;
+}
+
+/* 상단 배너 */
+.review-banner {
+    min-height: 165px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 30px 45px;
+    color: white;
+    background:
+        linear-gradient(90deg,
+            rgba(13, 55, 108, 0.98),
+            rgba(18, 67, 119, 0.90),
+            rgba(18, 67, 119, 0.20)),
+        url("../img/review-banner.jpg") center/cover;
+}
+
+.banner-icon {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 42px;
+}
+
+.review-banner h1 {
+    font-size: 32px;
+    margin: 0 0 12px;
+}
+
+.review-banner p {
+    font-size: 14px;
+    margin: 6px 0;
+    color: #e8f1ff;
+}
+
+/* 본문 컨테이너 */
+.review-container {
+    padding: 20px 25px 35px;
+    background: white;
+    border-radius: 20px 20px 0 0;
+    margin-top: -12px;
+    position: relative;
+}
+
+/* 리뷰 목록 / 작성 탭 */
+.review-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.review-tabs a {
+    flex: 1;
+    padding: 15px;
+    border-radius: 8px;
+    background: #edf2fb;
+    color: #173b69;
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.review-tabs a.active {
+    background: #124b8b;
+    color: white;
+}
+
+.review-tabs a:hover:not(.active) {
+    background: #dce8f8;
+}
+
+/* 검색창 */
+.review-search {
+    display: flex;
+    gap: 12px;
+    padding: 12px;
+    border: 1px solid #dce6f4;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.review-search select,
+.review-search input {
+    height: 43px;
+    border: 1px solid #cddbef;
+    border-radius: 7px;
+    padding: 0 12px;
+    font-size: 14px;
+    background: white;
+    color: #243b5c;
+}
+
+.review-search select {
+    width: 160px;
+}
+
+.review-search input {
+    flex: 1;
+    min-width: 0;
+}
+
+.search-btn {
+    width: 100px;
+    border: none;
+    border-radius: 7px;
+    background: #124b8b;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* 리뷰 한 개 */
+.review-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 15px 0;
+    border-bottom: 1px solid #dce6f3;
+}
+
+/* 숙소 이미지 */
+.hotel-img {
+    width: 180px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+/* 리뷰 정보 */
+.review-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.review-info-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.review-info-top h3 {
+    font-size: 18px;
+    margin: 0;
+    color: #14284a;
+}
+
+.review-info-top span {
+    color: #65758b;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+/* 별점 */
+.review-rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 6px 0;
+}
+
+.stars {
+    font-size: 23px;
+    color: #ffa500;
+    letter-spacing: 1px;
+}
+
+.empty-star {
+    color: #c8cdd5;
+}
+
+.review-rating strong {
+    font-size: 14px;
+}
+
+/* 리뷰 내용 */
+.review-text {
+    margin: 5px 0;
+    font-size: 13px;
+    color: #273b57;
+    line-height: 1.7;
+}
+
+/* 좋아요 버튼 */
+.like-btn {
+    flex-shrink: 0;
+    padding: 8px 16px;
+    border: 1px solid #c8d8ec;
+    border-radius: 25px;
+    background: white;
+    color: #173b69;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.like-btn:hover {
+    background: #edf5ff;
+}
+
+/* 하단 페이지 */
+.review-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.review-paging {
+    display: flex;
+    gap: 5px;
+    margin: 0 auto;
+}
+
+.review-paging a {
+    padding: 10px 13px;
+    border: 1px solid #d5e0f0;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #173b69;
+    font-size: 14px;
+}
+
+.review-paging a.active {
+    background: #124b8b;
+    color: white;
+}
+
+/* 리뷰 작성 버튼 */
+.write-btn {
+    padding: 13px 25px;
+    border: none;
+    border-radius: 8px;
+    background: #124b8b;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.write-btn:hover,
+.search-btn:hover {
+    background: #0a3464;
+}
+
+/* 하단 안내문 */
+.review-notice {
+    display: flex;
+    gap: 20px;
+    padding: 20px 25px;
+    border-radius: 12px;
+    background: #eaf2fd;
+    margin-top: 25px;
+    color: #253c5b;
+}
+
+.notice-icon {
+    font-size: 25px;
+    color: #124b8b;
+}
+
+.review-notice p {
+    margin: 5px 0;
+    font-size: 13px;
+}
+
+/* 리뷰 작성 폼 */
+.review-form-box {
+    max-width: 850px;
+    margin: 25px auto;
+    padding: 35px;
+    background: white;
+    border: 1px solid #dce6f3;
+    border-radius: 14px;
+}
+
+.review-form-box h2 {
+    margin: 0 0 10px;
+    color: #173b69;
+}
+
+.form-guide {
+    font-size: 14px;
+    color: #8292a5;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    color: #234568;
+}
+
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #cddbef;
+    border-radius: 8px;
+    font-size: 14px;
+    background: #fafcff;
+}
+
+.form-group textarea {
+    height: 230px;
+    resize: vertical;
+}
+
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2876b5;
+}
+
+/* 폼 하단 버튼 */
+.review-form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.cancel-btn,
+.submit-btn {
+    padding: 13px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.cancel-btn {
+    background: #edf2f8;
+    color: #345472;
+}
+
+.submit-btn {
+    background: #124b8b;
+    color: white;
+}
+
+.submit-btn:hover {
+    background: #0a3464;
+}
+
+/* 작은 화면 */
+@media (max-width: 900px) {
+    .review-sidebar {
+        width: 190px;
+    }
+
+    .review-info-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .hotel-img {
+        width: 140px;
+        height: 100px;
+    }
+
+    .review-search {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 650px) {
+    .review-layout {
+        flex-direction: column;
+    }
+
+    .review-sidebar {
+        width: 100%;
+    }
+
+    .review-logo {
+        padding: 15px;
+    }
+
+    .review-nav {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+
+    .review-nav a {
+        padding: 10px;
+    }
+
+    .sidebar-photo {
+        display: none;
+    }
+
+    .review-banner {
+        padding: 25px 20px;
+    }
+
+    .review-container {
+        padding: 20px 12px;
+    }
+
+    .review-item {
+        flex-wrap: wrap;
+    }
+
+    .review-info {
+        flex-basis: 55%;
+    }
+
+    .review-bottom {
+        flex-direction: column;
+    }
+
+    .review-paging {
+        margin: 0;
+    }
+
+    .review-form-box {
+        padding: 20px;
+    }
+}
