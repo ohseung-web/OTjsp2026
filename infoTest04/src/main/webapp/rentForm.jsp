@@ -4,29 +4,32 @@
 <script>
 // onchange ① 회원명 선택 -> 회원번호 자동 표시
 function setReader() {
-	var f = document.frm;
+	let f = document.frm;
 	f.r_no.value = f.r_name.value;      // option value = 회원번호
 	calc();
 }
 // onchange ② 도서명 선택 -> 도서코드 자동 표시
 function setBook() {
-	var f = document.frm;
+	let f = document.frm;
 	f.book_code.value = f.book_name.value;  // option value = 도서코드
 	calc();
 }
 // onchange ③ 대출일수 선택 -> 대출료 자동 계산
 function calc() {
-	var f = document.frm;
-	var no = parseInt(f.r_no.value);
-	var days = parseInt(f.rent_days.value);
-	var opt = f.book_name.options[f.book_name.selectedIndex];
+	let f = document.frm;
+	let no = parseInt(f.r_no.value);
+	let days = parseInt(f.rent_days.value);
+	let opt = f.book_name.options[f.book_name.selectedIndex];
+	
 	if (isNaN(no) || isNaN(days) || f.book_code.value == "") { f.fee.value = ""; return; }
-	var fee = parseInt(opt.getAttribute("data-fee")) * days;
+	let fee = parseInt(opt.getAttribute("data-fee")) * days;
+	
 	if (no >= 20000) fee = fee * 0.7;     // 우수회원 30% 할인
 	f.fee.value = Math.round(fee);
 }
+
 function check() {
-	var f = document.frm;
+	let f = document.frm;
 	if (f.rent_month.value == "" || !/^[0-9]{6}$/.test(f.rent_month.value)) {
 		alert("대출월을 6자리 숫자로 입력하세요. 예) 202305"); f.rent_month.focus(); return false; }
 	if (f.r_name.value == "") { alert("회원명을 선택하세요."); f.r_name.focus(); return false; }
