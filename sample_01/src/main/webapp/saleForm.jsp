@@ -15,15 +15,12 @@
 	ResultSet rs = null;
 	
 	String nextNo = "00001";   // 자동생성 회원번호
-	
 	Date date = new Date();
 	SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 	
 	try {
 		  con = Util.getConnection();
-		  // LPAD(문자열, 길이, 채울 문자열)
-          // 문자열을 길이만큼 늘린 후 채울 문자열을  왼쪽에 이어 붙임
-	      String sql = "select LPAD(IFNULL(MAX(pk_sale), 0) + 1, 5, '0') from tbl_sale";
+	      String sql = "select LPDA(IFNULL(MAX(pk_sale), 0) + 1,5,'0') from tbl_sale";
 	      pstmt =con.prepareStatement(sql);
 	      rs = pstmt.executeQuery();
 	      

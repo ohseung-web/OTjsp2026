@@ -27,7 +27,7 @@
 	try {
 		  con = Util.getConnection();
 	      String sql = " select s.pk_sale, s.deal_date, s.deal_count, b.name from tbl_sale s " 
-	    		       +"inner join tbl_bread b on s.fk_bread=b.pk_bread;";
+	    		       +"inner join tbl_bread b on s.fk_bread=b.pk_bread";
 	      pstmt = con.prepareStatement(sql);
 	      rs = pstmt.executeQuery();
 	      

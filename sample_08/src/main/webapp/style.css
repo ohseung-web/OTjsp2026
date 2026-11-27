@@ -1,0 +1,120 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 전체 화면 */
+html, body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* header */
+header {
+    height: 100px;
+    flex-shrink: 0;
+    background:rgb(199, 238, 145);
+    text-align: center;
+    line-height: 100px;
+}
+
+header h1 {
+    font-size: 24px;
+    text-align: center;
+}
+
+/* nav */
+nav {
+    height:60px;
+  	background:rgb(0, 64, 0);
+    line-height: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+  margin:0;
+  padding:0;
+}
+
+nav li {
+  display:inline-block;
+  width:170px;
+}
+nav a{
+  color:#fff;
+  text-decoration:none;
+}
+th a{
+	text-decoration: none;
+	color:rgb(0, 64, 0);
+}
+/* section */
+main section {
+    flex: 1;
+    padding: 30px 60px;
+    background-color: #fff;
+}
+
+main section h2 {
+    text-align: center;
+}
+
+/* table */
+table {
+    margin: 0 auto;
+}
+
+table th{
+	background-color: lightgray;
+}
+
+/* footer */
+footer {
+    height: 70px;
+    background:rgb(0, 128, 128);
+    color:#fff;
+    text-align: center;
+    line-height: 70px;
+    font-size: 13px;
+}
+
+main {
+	display:flex;
+}
+main aside{
+	flex:1;
+}
+main section{
+	flex:2;
+}
+
+
+aside {
+background:#f2f2f2;
+height:480px;
+}
+
+aside ul {
+margin:0;
+padding:0;
+}
+
+aside li {
+align-items:center;
+height:40px;
+}
+
+aside a {
+color:rgb(0, 64, 0);
+text-decoration:none;
+}
